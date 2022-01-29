@@ -54,7 +54,7 @@
 
                 const data = JSON.parse(localStorage.getItem(this.formId));
                 if(data === null) return;
-                console.log(data)
+                
 
                 data.forEach(item => {
                     document.getElementById(this.todoItemsId).prepend(this.createTask(item));
@@ -78,7 +78,7 @@
                 for(const key in data) {
                     if(!data[key].trim().length) throw new Error('Empty data');
                 }
-                console.log(data)
+               
                 data.itemId = randomId;
                 data.completed = false
 
