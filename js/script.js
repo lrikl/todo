@@ -54,7 +54,7 @@
 
                 const data = JSON.parse(localStorage.getItem(this.formId));
                 if(data === null) return;
-                
+              
 
                 data.forEach(item => {
                     document.getElementById(this.todoItemsId).prepend(this.createTask(item));
@@ -104,10 +104,10 @@
             }, 
             
             checkTask({target}) {
-         
+                
                 const checked = target.checked;
 
-                if(!!checked) {
+                if(checked) {
                     target.closest('.taskWrapper').classList.add('check');
                 }else {
                     target.closest('.taskWrapper').classList.remove('check');
@@ -175,12 +175,12 @@
                 content += `<div>`;
                 content += `<div class="taskDescription">${description}</div>`;
                 content += `<hr>`;
-                content += `<label class="completed form-check">`;
-                content += `<input data-item-id="${itemId}" class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">`;
+                content += `<label class="completed form-check check-item">`;
+                content += `<input data-item-id="${itemId}" class="form-check-input check-item" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">`;
                 content += `<span>Completed</span>`
-                content += `</label>`
+                content += `</label>`;
                 content += `</div>`;
-                content += `<hr>`
+                content += `<hr>`;
                 content += `<button class="btn btn-danger remove-item" data-item-id="${itemId}">Remove</button>`;
                 content += `</div>`;
                
